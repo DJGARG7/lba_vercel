@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-const helloworld = require("./controllers/helloworld");
+const productRoute = require("./routes/productRoute");
 
 dotenv.config();
 const port = process.env.PORT || 3005;
@@ -15,5 +15,5 @@ app.use(
     })
 );
 app.use(express.json());
-app.use("/",helloworld);
+app.use("/",productRoute);
 app.listen(port, () => console.log(`Backend Service running at port ${port}.`));
