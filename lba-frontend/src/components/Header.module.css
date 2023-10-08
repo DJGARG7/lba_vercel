@@ -8,7 +8,6 @@
 
 .inner {
     height: rem(56px);
-    width: rem(500px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,19 +16,27 @@
 .link {
     display: block;
     line-height: 1;
-    padding: rem(8px) rem(12px);
+    padding: 10px;
     border-radius: 5px;
     text-decoration: none;
     color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
     font-size: var(--mantine-font-size-sm);
     font-weight: 500;
+}
 
-    [data-mantine-color-scheme] &[data-active] {
-        background-color: var(--mantine-color-blue-filled);
-        color: var(--mantine-color-white);
-    }
+.link[data-mantine-color-scheme] {
+    background-color: var(--mantine-color-blue-filled);
+    color: var(--mantine-color-white);
+}
+
+.link--active {
+    background-color: var(--mantine-color-blue-filled);
+    color: var(--mantine-color-white);
 }
 
 .link::hover {
-    background-color: blue;
+    background-color: light-dark(
+        var(--mantine-color-gray-0),
+        var(--mantine-color-dark-6)
+    );
 }

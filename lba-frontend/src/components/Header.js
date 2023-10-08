@@ -1,36 +1,33 @@
-import { useState } from "react";
 import { Container, Group, Image } from "@mantine/core";
-// import { useDisclosure } from "@mantine/hooks";
 import classes from "./Header.module.css";
+import { NavLink } from "react-router-dom";
 
 const links = [
-    { link: "", label: "Home" },
+    { link: "/", label: "Home" },
     { link: "/about", label: "About" },
 ];
 
 export function Header() {
-    // const [opened, { toggle }] = useDisclosure(false);
-    const [active, setActive] = useState(links[0].link);
-
     const items = links.map((link) => (
-        <a
+        <NavLink
             key={link.label}
-            href={link.link}
-            className={classes.link}
-            data-active={active === link.link || undefined}
-            onClick={(event) => {
-                event.preventDefault();
-                setActive(link.link);
-            }}
+            className={({ isActive, isPending }) =>
+                isPending
+                    ? `${classes["link"]} ${classes["link--active"]}`
+                    : isActive
+                    ? `${classes["link"]} ${classes["link--active"]}`
+                    : classes.link
+            }
+            to={link.link}
         >
             {link.label}
-        </a>
+        </NavLink>
     ));
 
     return (
         <header className={classes.header}>
             <Container size="md" className={classes.inner}>
-                <Image src="logo.png" h={100}></Image>
+                <Image src="logo.png" h={100} p={5}></Image>
                 <Group gap={20} visibleFrom="xs">
                     {items}
                 </Group>
