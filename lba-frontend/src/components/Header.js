@@ -1,6 +1,7 @@
 import { Container, Group, Image } from "@mantine/core";
 import classes from "./Header.module.css";
 import { NavLink } from "react-router-dom";
+import logo from "../images/logo.png";
 
 const links = [
     { link: "/", label: "Home" },
@@ -27,7 +28,7 @@ export function Header() {
     return (
         <header className={classes.header}>
             <Container size="md" className={classes.inner}>
-                <Image src="logo.png" h={100} p={5}></Image>
+                <Image src={logo} h={100} p={5}></Image>
                 <Group gap={20} visibleFrom="xs">
                     {items}
                 </Group>
