@@ -31,3 +31,8 @@ Result : select * from lba_product where product_deleted_flag = 'N' and product_
 
 7: ["pub_lba_product_images","product_id",<product_id>]
 Result : select * from lba_product_images where product_id = <product_id>;
+
+
+
+Image Upload Rest Call:
+![Alt text](image.png)
