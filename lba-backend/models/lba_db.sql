@@ -79,10 +79,12 @@ CREATE TABLE `lba_product` (
 -- Table structure for table `lba_product_images`
 --
 
-CREATE TABLE `lba_product_images` (
-  `product_image_id` varchar(36) NOT NULL,
-  `product_id` varchar(36) NOT NULL,
-  `image_id` varchar(36) NOT NULL
+CREATE TABLE `lba_image` (
+  `image_id` varchar(36) NOT NULL,
+  `image_url` varchar(200) NOT NULL,
+  `carousel_flag` varchar(1) NOT NULL,
+  `original_name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`image_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -110,11 +112,6 @@ ALTER TABLE `lba_category`
   ADD PRIMARY KEY (`category_id`),
   ADD KEY `image_id` (`image_id`);
 
---
--- Indexes for table `lba_image`
---
-ALTER TABLE `lba_image`
-  ADD PRIMARY KEY (`image_id`);
 
 --
 -- Indexes for table `lba_order`
