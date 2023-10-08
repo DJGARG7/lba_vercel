@@ -1,0 +1,13 @@
+{
+    "keysToCheck" : ["pub_table","pub_criteria","pub_criteria_value"],
+    "publicAccess": [
+      "pub_lba_image",
+      "pub_lba_category",
+      "pub_lba_product",
+      "pub_lba_product_images"
+    ],
+    "pub_lba_image": [ "image_id", "carousel_flag_Y" ],
+    "pub_lba_category": [ "all" ],
+    "pub_lba_product": [ "product_id", "category_id", "keyword" ],
+    "pub_lba_product_images": [ "product_id" ]
+}
