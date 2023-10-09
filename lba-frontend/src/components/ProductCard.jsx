@@ -1,9 +1,10 @@
 import { useDisclosure } from "@mantine/hooks";
-import { Image, Card, Text, Group, Button, Modal, Input } from "@mantine/core";
+import { Image, Card, Text, Group, Button } from "@mantine/core";
 import classes from "./ProductCard.module.css";
+import { Link } from "react-router-dom";
 
 export function ProductCard({ product }) {
-    const [opened, { open, close }] = useDisclosure(false);
+    const [{ open }] = useDisclosure(false);
 
     return (
         <Card radius="md" withBorder padding="xl">
@@ -45,12 +46,14 @@ export function ProductCard({ product }) {
                     </Text>
                 </div>
 
-                <Button radius="md" color="red" onClick={open}>
-                    Interested?
-                </Button>
+                <Link to="/products/cat1/product1">
+                    <Button radius="md" color="grape" onClick={open}>
+                        View
+                    </Button>
+                </Link>
             </Group>
 
-            <Modal
+            {/* <Modal
                 opened={opened}
                 onClose={close}
                 title="Product title"
@@ -64,7 +67,7 @@ export function ProductCard({ product }) {
                 }}
             >
                 <Input placeholder="Input component" />
-            </Modal>
+            </Modal> */}
         </Card>
     );
 }

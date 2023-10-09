@@ -13,8 +13,8 @@ import { ProductCard } from "./ProductCard";
 export function ProductGrid() {
     return (
         <SimpleGrid
-            cols={{ base: 1, sm: 3, lg: 5 }}
-            spacing={{ base: 10, sm: "xl" }}
+            cols={{ base: 1, sm: 2, lg: 4 }}
+            spacing={{ base: 15, sm: "xl" }}
             verticalSpacing={{ base: "md", sm: "xl" }}
             px={100}
         >

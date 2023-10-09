@@ -1,12 +1,13 @@
 import { SimpleGrid } from "@mantine/core";
 import { CategoryCard } from "./CategoryCard";
+import { Link } from "react-router-dom";
 
 /*
 	* Make axios request.
-	* categories.map((category) => (
-		<CategoryCard imageUrl={category.imageUrl}
-                title={category.title}
-                endpoint={"/category/" + category.endpoint}
+	* categories.map((products) => (
+		<CategoryCard imageUrl={products.imageUrl}
+                title={products.title}
+                endpoint={"/products/" + products.endpoint}
 	))
 */
 
@@ -18,80 +19,82 @@ export function CategoryGrid() {
             verticalSpacing={{ base: "md", sm: "xl" }}
             px={100}
         >
-            <CategoryCard
-                imageUrl={""}
-                title={"Cat 1"}
-                endpoint={"/category/cat1"}
-            />
+            <Link to={"/products/cat1"}>
+                <CategoryCard
+                    imageUrl={""}
+                    title={"Cat 1"}
+                    endpoint={"/products/cat1"}
+                />
+            </Link>
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 2"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 3"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 4"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 5"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 6"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 7"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 4"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 5"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 6"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 7"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 4"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 5"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 6"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
             <CategoryCard
                 imageUrl={""}
                 title={"Cat 7"}
-                endpoint={"/category/cat1"}
+                endpoint={"/products/cat1"}
             />
         </SimpleGrid>
     );

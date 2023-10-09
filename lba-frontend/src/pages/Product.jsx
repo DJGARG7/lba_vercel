@@ -1,20 +1,21 @@
 import { Stack, Divider, Center, Title } from "@mantine/core";
 import { Header } from "../components/Header";
-import { CategoryGrid } from "../components/CategoryGrid";
 import { Footer } from "../components/Footer";
+import { useParams } from "react-router-dom";
 
-function Home() {
+function Product() {
+    const { productName } = useParams();
+
     return (
         <Stack>
             <Header />
             <Center>
-                <Title>Our Products</Title>
+                <Title>{productName}</Title>
             </Center>
             <Divider my="sm" />
-            <CategoryGrid />
             <Footer />
         </Stack>
     );
 }
 
-export default Home;
+export default Product;
