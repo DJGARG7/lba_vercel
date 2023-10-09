@@ -14,10 +14,10 @@ import { Link } from "react-router-dom";
 export function CategoryGrid() {
     return (
         <SimpleGrid
-            cols={{ base: 1, sm: 2, lg: 4 }}
-            spacing={{ base: 10, sm: "xl" }}
+            cols={{ base: 1, sm: 2, md: 3, lg: 3, xl: 3 }}
+            spacing={{ base: "md", sm: "xl" }}
             verticalSpacing={{ base: "md", sm: "xl" }}
-            px={100}
+            px={{ base: 75, sm: 100, md: 125, lg: 300, xl: 350 }}
         >
             <Link to={"/products/cat1"}>
                 <CategoryCard

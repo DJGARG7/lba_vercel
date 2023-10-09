@@ -11,7 +11,7 @@ export function ProductCard({ product }) {
             <Card.Section>
                 <Image
                     src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80"
-                    h={250}
+                    h={{ base: 175, sm: 175, md: 175, lg: 200, xl: 250 }}
                     alt="No way!"
                 />
             </Card.Section>
@@ -30,9 +30,9 @@ export function ProductCard({ product }) {
             </Group>
 
             <Text fz="sm" c="dimmed" mt="sm">
-                Relax, rejuvenate and unplug in this unique contemporary
+                {/* Relax, rejuvenate and unplug in this unique contemporary
                 Birdbox. Feel close to nature in ultimate comfort. Enjoy the
-                view of the epic mountain range of Blegja and the Førdefjord.
+                view of the epic mountain range of Blegja and the Førdefjord. */}
             </Text>
 
             <Group justify="space-between" mt="md">
