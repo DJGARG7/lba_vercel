@@ -8,12 +8,13 @@ const imageRoute = require("./routes/imageRoute");
 
 dotenv.config();
 const port = process.env.PORT || 3005;
+const frontendURL = process.env.FRONTEND || "http://localhost:3000"
 
 const app = express();
 app.use(express.static(path.join(__dirname,'build')));
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: frontendURL,
         credentials: true,
     })
 );

@@ -2,7 +2,7 @@ const db = require("../config/db");
 const tablesMetadata = require("./tablesMetadata")
 const fetchAllPublicData = (req, res) => {
 
-    const data = req.body;
+    const data = req.query;
     var query;
     var queryParam;
 
