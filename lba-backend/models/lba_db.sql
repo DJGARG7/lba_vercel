@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2023 at 08:21 PM
+-- Generation Time: Feb 11, 2024 at 12:08 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -42,7 +42,8 @@ CREATE TABLE `lba_category` (
 CREATE TABLE `lba_image` (
   `image_id` varchar(36) NOT NULL,
   `image_url` varchar(200) NOT NULL,
-  `carousel_flag` varchar(1) NOT NULL
+  `carousel_flag` varchar(1) NOT NULL,
+  `original_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -79,12 +80,11 @@ CREATE TABLE `lba_product` (
 -- Table structure for table `lba_product_images`
 --
 
-CREATE TABLE `lba_image` (
+CREATE TABLE `lba_product_images` (
+  `product_image_id` varchar(36) NOT NULL,
+  `product_id` varchar(36) NOT NULL,
   `image_id` varchar(36) NOT NULL,
-  `image_url` varchar(200) NOT NULL,
-  `carousel_flag` varchar(1) NOT NULL,
-  `original_name` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`image_id`)
+  `primary_image_flag` enum('Y') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -112,6 +112,11 @@ ALTER TABLE `lba_category`
   ADD PRIMARY KEY (`category_id`),
   ADD KEY `image_id` (`image_id`);
 
+--
+-- Indexes for table `lba_image`
+--
+ALTER TABLE `lba_image`
+  ADD PRIMARY KEY (`image_id`);
 
 --
 -- Indexes for table `lba_order`
